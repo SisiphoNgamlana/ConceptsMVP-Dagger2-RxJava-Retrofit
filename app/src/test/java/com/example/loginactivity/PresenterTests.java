@@ -1,13 +1,6 @@
 package com.example.loginactivity;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyZeroInteractions;
-import static org.mockito.Mockito.when;
-
-import android.text.TextUtils;
+import static org.mockito.Mockito.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +27,8 @@ public class PresenterTests {
     //TODO : Test fails, rename this
     @Test
     public void noInteractionWithView(){
-        when(mockLoginModel.getUser()).thenReturn(null);
+
+        presenter.setView(null);
 
         presenter.getCurrentUser();
 
