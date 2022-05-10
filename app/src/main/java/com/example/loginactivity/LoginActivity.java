@@ -28,9 +28,9 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityMVP
 
         ((App) getApplication()).getApplicationComponent().inject(this);
 
-        firstNameEditText.findViewById(R.id.first_name_edittext);
-        lastNameEditText.findViewById(R.id.last_name_edittext);
-        loginButton.findViewById(R.id.login_button);
+        firstNameEditText = findViewById(R.id.first_name_edittext);
+        lastNameEditText = findViewById(R.id.last_name_edittext);
+        loginButton = findViewById(R.id.login_button);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
