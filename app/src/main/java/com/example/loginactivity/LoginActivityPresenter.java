@@ -33,15 +33,13 @@ public class LoginActivityPresenter implements LoginActivityMVP.Presenter {
 
     @Override
     public void getCurrentUser() {
-        User user = model.getUser();
-        if (user == null) {
-            if (view != null) {
-                view.showUserNotAvailable();
-            }
-        } else {
-            if (view != null) {
+        if (view != null) {
+            User user = model.getUser();
+            if (user != null) {
                 view.setFirstName(user.getName());
                 view.setLastName(user.getLastName());
+            } else {
+                view.showUserNotAvailable();
             }
         }
     }
