@@ -1,8 +1,9 @@
 package com.example.loginactivity;
 
-import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class LoginActivityPresenter implements LoginActivityMVP.Presenter {
 
@@ -22,7 +23,7 @@ public class LoginActivityPresenter implements LoginActivityMVP.Presenter {
     @Override
     public void loginButtonClicked() {
         if (view != null) {
-            if (TextUtils.isEmpty(view.getFirstName()) || TextUtils.isEmpty(view.getLastName())) {
+            if (StringUtils.isEmpty(view.getFirstName()) || StringUtils.isEmpty(view.getLastName())) {
                 view.showInputError();
             } else {
                 model.createUser(view.getFirstName(), view.getLastName());
