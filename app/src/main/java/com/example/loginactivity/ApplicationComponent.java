@@ -2,12 +2,14 @@ package com.example.loginactivity;
 
 import android.app.Application;
 
+import com.example.loginactivity.api.apimodel.ApiModule;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
 
 @Singleton
-@Component(modules = {ApplicationModule.class, LoginModule.class})
+@Component(modules = {ApplicationModule.class, LoginModule.class, ApiModule.class})
 public interface ApplicationComponent {
 
     class App extends Application {
@@ -24,6 +26,7 @@ public interface ApplicationComponent {
             applicationComponent = DaggerApplicationComponent.builder()
                     .applicationModule(new ApplicationModule(this))
                     .loginModule(new LoginModule())
+                    .apiModule(new ApiModule())
                     .build();
         }
 
